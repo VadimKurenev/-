@@ -26,15 +26,20 @@ int main()
 
 	} while (true);
 
+	long int factorial = n;
+	long int composition;
 
-	long int factorial = 1;
-	long int composition = 0;
-
-	for (int i = 0; i < n; i++)
+	if (n == 1)
 	{
-		composition = n - pow(2, i);
-		factorial *= composition;
+		factorial = n;
+	}
+	else
+	{
+		for (int i = 1; i <= n; i++)
+		{
+			composition = n - pow(2, i);
+			factorial *= composition;
+		}
 	}
 	cout << "Двойной факториал числа " << n << "!! = " << factorial << endl;
-
 }
