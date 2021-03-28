@@ -54,7 +54,6 @@ int main()
 			}
 		} while (true);
 		sum_1 += p[i];
-		sum_1 > 1 ? p[i] = 0 : sum_1 = sum_1;
 
 	}
 
