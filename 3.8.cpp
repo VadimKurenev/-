@@ -17,7 +17,7 @@ int main()
 	{
 		do
 		{
-			cout << "Введите вероятность " << i + 1 << ": ";
+			cout << "Введите значение " << i + 1 << ": ";
 			cin >> e[i];
 			if (cin.fail() || e[i] < 0)
 			{
@@ -34,7 +34,7 @@ int main()
 	cout << endl;
 
 	double* p = new double[n];
-	double sum_1 = 0;
+
 	for (int i = 0; i < n; i++)
 	{
 		do
@@ -52,8 +52,6 @@ int main()
 				break;
 			}
 		} while (true);
-		sum_1 += p[i];
-		sum_1 > 1 ? p[i] = 0 : sum_1 = sum_1;
 	}
 
 	for (int i = 0; i < n; i++)
