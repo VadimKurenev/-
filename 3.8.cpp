@@ -34,6 +34,7 @@ int main()
 	cout << endl;
 
 	double* p = new double[n];
+	double sum_1 = 0;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -41,7 +42,7 @@ int main()
 		{
 			cout << "Введите вероятность " << i + 1 << ": ";
 			cin >> p[i];
-			if (cin.fail() || p[i] < 0 || p[i] > 1)
+			if (cin.fail() || p[i] < 0 || p[i] > 1 || (sum_1 + p[i] > 1))
 			{
 				cin.clear();
 				cin.ignore(10, '\n');
@@ -52,6 +53,9 @@ int main()
 				break;
 			}
 		} while (true);
+		sum_1 += p[i];
+		sum_1 > 1 ? p[i] = 0 : sum_1 = sum_1;
+
 	}
 
 	for (int i = 0; i < n; i++)
@@ -68,7 +72,7 @@ int main()
 
 	delete[] e;
 	delete[] p;
-	cout << "Дисперсия случайно величины = " << d << endl;
+	cout << "Дисперсия случайной величины = " << d << endl;
 }
 int value()
 {
