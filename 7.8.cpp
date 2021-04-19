@@ -1,10 +1,11 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 class dbl_fact
 {
 public:
-    void calc(long int n)
+    long int n;
+    void calc()
     {
         long double res = n;
 
@@ -26,7 +27,7 @@ long int value()
             if (cin.fail() || n <= 0)
             {
                 cin.clear();
-                cin.ignore(4000, '\n');
+                cin.ignore(36, '\n');
                 cout << "Некорректный ввод, повторите ввод" << endl;
             }
             else
@@ -42,10 +43,12 @@ int main()
     setlocale(LC_ALL, "RUS");
     cout << "Данная программа вычисляет двойной факториал числа n" << endl;
 
-    long int n = value();
+    long int factorial = value();
 
     dbl_fact add;
-    add.calc(n);
+    add.n = factorial;
+
+    add.calc();
 
     return 0;
 }
