@@ -8,7 +8,8 @@ double inpDouble();
 
 int inpInt();
 
-double expFoo(double z);
+template <typename Type>
+double expFoo(Type z);
 
 long int factorNum(int x);
 
@@ -134,10 +135,10 @@ double inpDouble()
         if (cin.fail()) {
             cout << "Ошибка: введено недопустимое значение.\nПовторите ввод: ";
             cin.clear();
-            cin.ignore(3333, '\n');
+            cin.ignore(6666, '\n');
         }
         else {
-            cin.ignore(3333, '\n');
+            cin.ignore(6666, '\n');
             return num;
         }
     }
@@ -171,9 +172,10 @@ long int factorNum(int x)
         return 0;
 }
 
-double expFoo(double Z)
+template <typename Type>
+double expFoo(Type z)
 {
-    double z = -Z;
+    z = -z;
     double temp, res = 0;
     for (int i = 0; i < 20; i++) {
         long int fact = factorNum(i);
